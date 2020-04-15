@@ -18,6 +18,17 @@ class Api::V1::UsersController < ApplicationController
     else
       render json: user.errors, status: :unprocessable_entity
     # render json: TrainerSerializer.new(trainer).to_serialized_json, status: 200
+    end
+  end
+
+  def update
+    user = User.find(params[:id])
+    if user.update(user_params)
+      render json: user
+      # render json: PokemonSerializer.new(novel).to_serialized_json, status: 200
+    else
+      render json: { status: 500 }
+    end
   end
 
   private
