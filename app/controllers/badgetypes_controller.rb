@@ -1,2 +1,0 @@
-class BadgetypesController < ApplicationController
-end
