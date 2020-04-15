@@ -11,19 +11,11 @@ class Api::V1::UsersController < ApplicationController
     # render json: TrainerSerializer.new(trainer).to_serialized_json, status: 200
   end
 
-  # def create
-  #   trainer = Trainer.create(trainer_params)
-  #   render json: TrainerSerializer.new(trainer).to_serialized_json, status: 200
-  # end
-
-  # def update
-  #   @trainer = Trainer.find(params[:id])
-  #   if @trainer.update(trainer_params)
-  #     render json: TrainerSerializer.new(@trainer).to_serialized_json, status: 200
-  #   else
-  #     render json: { status: 500 }
-  #   end
-  # end
+  def create
+    user = User.create(user_params)
+    render json: user
+    # render json: TrainerSerializer.new(trainer).to_serialized_json, status: 200
+  end
 
   private
 
