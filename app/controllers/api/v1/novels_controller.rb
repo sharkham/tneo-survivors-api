@@ -2,7 +2,8 @@ class Api::V1::NovelsController < ApplicationController
 
   def index
     novels = Novel.all
-    render json: novels
+    render json: NovelSerializer.new(novels).to_serialized_json, status: 200
+
   end
 
   def show
@@ -18,6 +19,7 @@ class Api::V1::NovelsController < ApplicationController
     else
       render json: novel.errors, status: :unprocessable_entity
     # render json: TrainerSerializer.new(trainer).to_serialized_json, status: 200
+    end
   end
 
   def update
