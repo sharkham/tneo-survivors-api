@@ -1,0 +1,2 @@
+class Badgetype < ApplicationRecord
+end
