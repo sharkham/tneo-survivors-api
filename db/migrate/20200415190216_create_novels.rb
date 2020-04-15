@@ -6,6 +6,7 @@ class CreateNovels < ActiveRecord::Migration[6.0]
       t.string :plan
       t.integer :goal
       t.integer :wordcount
+      t.integer :year
 
       t.belongs_to :user, null: false, foreign_key: true
 
