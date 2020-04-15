@@ -33,7 +33,7 @@ class Api::V1::NovelsController < ApplicationController
   private
 
   def novel_params
-    params.require(:novel).permit(:id, :title, :summary, :plan, :goal, :wordcount, :user_id)
+    params.require(:novel).permit(:id, :title, :summary, :plan, :goal, :wordcount, :year, :user_id)
   end
 
 end
