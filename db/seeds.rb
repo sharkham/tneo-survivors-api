@@ -6,6 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+marysue = User.create(name: "Mary Sue", username: "marysue1", password: "password")
+malreynolds = User.create(name: "Mal Reynolds", username: "serenity1", password: "password")
+cat = User.create(name: "Meow meow", username: "floof", password: "password")
+
+novel1 = marysue.novels.build(title: "Title", summary: "This is a novel summary", plan: "Write it", goal: 30000, year: 2020)
+marysue.save
+
+novel2 = malreynolds.novels.build(title: "Firefly", summary: "Can't take the sky from me", plan: "Wing it", goal: 50000, year: 2020)
+malreynolds.save
+
+novel3 = cat.novels.build(title: "Catnip", summary: "I like it.", plan: "meow", goal: 19000, year: 2020)
+cat.save
+
+
 Badgetype.create(name: "Starting to get started", description: "updated spreadsheet", emoji: "🎉")
 Badgetype.create(name: "Starry Night", description: "night scene", emoji: "🌉")
 Badgetype.create(name: "Here comes the sun!", description: "morning scene", emoji: "🌅")
