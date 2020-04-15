@@ -1,6 +1,6 @@
-class BadgetypesController < ApplicationController
+class Api::V1::BadgetypesController < ApplicationController
   def index
-    badgetypes = Entry.all
+    badgetypes = Badgetype.all
     render json: badgetypes, status: 200
   end
 
