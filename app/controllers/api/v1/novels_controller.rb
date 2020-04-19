@@ -1,7 +1,8 @@
 class Api::V1::NovelsController < ApplicationController
 
   def index
-    novels = Novel.all
+    novels = User.find_by(id: params[:user_id]).novels
+    # novels = Novel.all
     render json: NovelSerializer.new(novels).to_serialized_json, status: 200
 
   end
