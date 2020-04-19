@@ -13,7 +13,6 @@ class Api::V1::UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
-    byebug
     if user.save
       session[:user_id] = user.id
       render json: UserSerializer.new(user).to_serialized_json, status: 200
