@@ -10,7 +10,9 @@ Rails.application.routes.draw do
       resources :badgetypes
       resources :badges
       resources :novels
-      resources :users
+      resources :users do
+        resources :novels
+      end
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
