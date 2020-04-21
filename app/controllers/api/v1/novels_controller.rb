@@ -16,7 +16,7 @@ class Api::V1::NovelsController < ApplicationController
   def create
     novel = User.find_by(id: params[:user_id]).novels.build(novel_params)
     # novel = Novel.new(novel_params)
-    byebug
+    # byebug
     if novel.save
       render json: NovelSerializer.new(novel).to_serialized_json, status: 200
     else
