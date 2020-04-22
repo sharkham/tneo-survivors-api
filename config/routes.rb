@@ -12,7 +12,8 @@ Rails.application.routes.draw do
       resources :badgetypes
       resources :badges, only: [:index, :show, :destroy]
       resources :novels, only: [:show, :update, :destroy] do
-        resources :badges, only: [:create]
+        resources :badges, only: :create
+      end
       resources :users do
         resources :novels, only: [:index, :create]
       end
