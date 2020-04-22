@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_221508) do
     t.string "name"
     t.string "description"
     t.string "emoji"
+    t.integer "badgetype_id"
     t.bigint "novel_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

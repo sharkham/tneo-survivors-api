@@ -10,13 +10,13 @@ marysue = User.create(name: "Mary Sue", username: "marysue1", password: "passwor
 malreynolds = User.create(name: "Mal Reynolds", username: "serenity1", password: "password")
 cat = User.create(name: "Meow meow", username: "floof", password: "password")
 
-novel1 = marysue.novels.build(title: "Title", summary: "This is a novel summary", plan: "Write it", goal: 30000, year: 2020)
+novel1 = marysue.novels.build(title: "Title", summary: "This is a novel summary", plan: "November Warrior", goal: 30000)
 marysue.save
 
-novel2 = malreynolds.novels.build(title: "Firefly", summary: "Can't take the sky from me", plan: "Wing it", goal: 50000, year: 2020)
+novel2 = malreynolds.novels.build(title: "Firefly", summary: "Can't take the sky from me", plan: "November Warrior", goal: 50000)
 malreynolds.save
 
-novel3 = cat.novels.build(title: "Catnip", summary: "I like it.", plan: "meow", goal: 19000, year: 2020)
+novel3 = cat.novels.build(title: "Catnip", summary: "I like it.", plan: "November Warrior", goal: 19000)
 cat.save
 
 
