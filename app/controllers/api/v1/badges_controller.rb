@@ -21,6 +21,6 @@ class Api::V1::BadgesController < ApplicationController
   private
 
   def badge_params
-    params.require(:badge).permit(:id, :name, :description, :emoji, :novel_id)
+    params.require(:badge).permit(:id, :name, :description, :emoji, :novel_id, :badgetype_id)
   end
 end
