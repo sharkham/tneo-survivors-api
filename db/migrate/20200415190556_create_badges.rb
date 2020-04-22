@@ -4,6 +4,7 @@ class CreateBadges < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :description
       t.string :emoji
+      t.integer :badgetype_id
 
       t.belongs_to :novel, null: false, foreign_key: true
 
