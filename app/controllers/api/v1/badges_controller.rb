@@ -18,6 +18,10 @@ class Api::V1::BadgesController < ApplicationController
     end
   end
 
+  def destroy
+    Badge.find_by(id: params[:id]).destroy
+  end
+
   private
 
   def badge_params
