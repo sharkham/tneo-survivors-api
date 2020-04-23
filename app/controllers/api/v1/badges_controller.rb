@@ -10,11 +10,16 @@ class Api::V1::BadgesController < ApplicationController
   end
 
   def create
-    badge = Novel.find_by(id: params[:novel_id]).badges.build(badge_params)
-    if badge.save
-      render json: badge, status: 200
+    novel = Novel.find_by(id: params[:novel_id])
+    if novel.badges.any?{|novelBadge| novelBadge.badgetype_id === badge_params[:badgetype_id]}
+      render json: error
     else
-      render json: badge.errors, status: :unprocessable_entity
+      badge = novel.badges.build(badge_params)
+      if badge.save
+        render json: badge, status: 200
+      else
+        render json: badge.errors, status: :unprocessable_entity
+      end
     end
   end
 
