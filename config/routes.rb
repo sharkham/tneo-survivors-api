@@ -10,11 +10,11 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :badgetypes
       resources :badges, only: [:index, :show, :destroy]
-      resources :novels, only: [:show, :update, :destroy] do
+      resources :novels, only: [:index, :show, :update, :destroy] do
         resources :badges, only: :create
       end
       resources :users do
-        resources :novels, only: [:index, :create]
+        resources :novels, only: :create
       end
     end
   end
