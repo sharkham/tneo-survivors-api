@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
 
+  #signup and login routes
   post '/api/v1/login' => "api/v1/sessions#create"
   delete '/api/v1/logout' => "api/v1/sessions#destroy"
-
   post '/api/v1/signup' => "api/v1/users#create"
-
   get '/api/v1/get_current_user' => "api/v1/sessions#get_current_user"
 
   namespace :api do
