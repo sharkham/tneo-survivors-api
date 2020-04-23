@@ -8,7 +8,7 @@ class NovelSerializer
     options = {
       include: {
         badges: {
-          only: [:id, :name, :description, :emoji, :novel_id]
+          only: [:id, :name, :description, :emoji, :novel_id, :badgetype_id]
         }
       },
       except: [:created_at, :updated_at]
