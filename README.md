@@ -1,24 +1,22 @@
-# README
+# Novel Tracker App (back end)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ever wanted to run your own novel writing contest, or just keep track of your novel writing progress?
 
-Things you may want to cover:
+This is the Rails API for Novel Tracker, a single page [React app]() where users can create a novel project for a novel writing contest and view others' novel projects.
 
-* Ruby version
 
-* System dependencies
+## Installation
 
-* Configuration
+1. Fork the repository
+2. Clone the files to your computer
+3. Navigate to `/novel-tracker-api` in your terminal
+4. Run `bundle install`
+5. Run `rails db:migrate`
+6. Run `rails db:seed`. This step is very important as it loads badgetypes into the app!
+7. Run `rails s` to start the server. Make sure to run the React app at the same time as well!
 
-* Database creation
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
