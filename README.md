@@ -2,7 +2,7 @@
 
 Ever wanted to run your own novel writing contest, or just keep track of your novel writing progress?
 
-This is the Rails API for Novel Tracker, a single page [React app]() where users can create a novel project for a novel writing contest and view others' novel projects.
+This is the Rails API for Novel Tracker, a single page [React app](https://github.com/sharkham/novel-tracker-frontend) where users can create a novel project for a novel writing contest and view others' novel projects.
 
 
 ## Installation
