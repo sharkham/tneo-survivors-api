@@ -1,23 +1,17 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#Comment out lines 3-14 to start the app with some test users!
 
-marysue = User.create(name: "Mary Sue", username: "marysue1", password: "password")
-malreynolds = User.create(name: "Mal Reynolds", username: "serenity1", password: "password")
-cat = User.create(name: "Meow meow", username: "floof", password: "password")
+# marysue = User.create(name: "Mary Sue", username: "marysue1", password: "password")
+# malreynolds = User.create(name: "Mal Reynolds", username: "serenity1", password: "password")
+# cat = User.create(name: "Meow meow", username: "floof", password: "password")
 
-novel1 = marysue.novels.build(title: "Title", summary: "This is a novel summary", plan: "November Warrior", goal: 30000)
-marysue.save
+# novel1 = marysue.novels.build(title: "Title", summary: "This is a novel summary", plan: "November Warrior", goal: 30000)
+# marysue.save
 
-novel2 = malreynolds.novels.build(title: "Firefly", summary: "Can't take the sky from me", plan: "November Warrior", goal: 50000)
-malreynolds.save
+# novel2 = malreynolds.novels.build(title: "Firefly", summary: "Can't take the sky from me", plan: "November Warrior", goal: 50000)
+# malreynolds.save
 
-novel3 = cat.novels.build(title: "Catnip", summary: "I like it.", plan: "November Warrior", goal: 19000)
-cat.save
+# novel3 = cat.novels.build(title: "Catnip", summary: "I like it.", plan: "November Warrior", goal: 19000)
+# cat.save
 
 
 Badgetype.create(name: "Starting to get started", description: "updated spreadsheet", emoji: "🎉")
