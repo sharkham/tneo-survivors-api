@@ -13,8 +13,7 @@ class NovelSerializer
         badges: {
           only: [:id, :name, :description, :emoji, :novel_id, :badgetype_id]
         }
-      },
-      except: [:created_at, :updated_at]
+      }
     }
     @novel.to_json(options)
   end
