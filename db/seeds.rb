@@ -14,7 +14,7 @@
 # cat.save
 
 
-Badgetype.create(name: "Starting to get started", description: "updated spreadsheet", emoji: "🎉")
+Badgetype.create(name: "Starting to get started", description: "updated website", emoji: "🎉")
 Badgetype.create(name: "Starry Night", description: "night scene", emoji: "🌉")
 Badgetype.create(name: "Here comes the sun!", description: "morning scene", emoji: "🌅")
 Badgetype.create(name: "On fire", description: "5,000 words in a single session", emoji: "🔥")
