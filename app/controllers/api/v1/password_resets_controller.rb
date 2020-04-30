@@ -1,6 +1,7 @@
 class Api::V1::PasswordResetsController < ApplicationController
   def create
     user = User.find_by(email: params[:email])
+    byebug
     if user
       user.send_password_reset
       #just for testing
