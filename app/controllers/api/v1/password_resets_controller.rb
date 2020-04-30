@@ -3,7 +3,7 @@ class Api::V1::PasswordResetsController < ApplicationController
     user = User.find_by(email: params[:email])
     byebug
     if user
-      user.send_password_reset
+      # user.send_password_reset
       #just for testing
       alert: "User exists"
     end
