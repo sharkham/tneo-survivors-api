@@ -1,2 +1,2 @@
-class PasswordResetsController < ApplicationController
+class Api::V1::PasswordResetsController < ApplicationController
 end
