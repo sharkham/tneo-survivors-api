@@ -1,5 +1,7 @@
+# require_relative '../helpers/user_helpers'
+
 class User < ApplicationRecord
-  include UserHelpers
+  # extend UserHelpers
   has_many :novels
   has_secure_password
 
@@ -10,11 +12,20 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 5, wrong_length: "Password must be at least 5 characters." }
 
   def send_password_reset
-    UserHelpers.generate_base64_token
+    # UserHelpers.generate_base64_token
+    self.password_reset_token = generate_base64_token
     #   self.password_reset_token = UserHelpers.generate_base64_token # plain method lives in its own file
     #   self.password_reset_sent_at = Time.zone.now
     #   save!
     # UserMailer.password_reset(self).deliver
+  end
+
+  private
+
+  #move this into module at some point
+  def generate_base64_token
+    test = "test!"
+    byebug
   end
 
 end
