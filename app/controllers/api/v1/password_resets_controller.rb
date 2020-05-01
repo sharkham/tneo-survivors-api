@@ -8,6 +8,10 @@ class Api::V1::PasswordResetsController < ApplicationController
       render json: {
         alert: "User exists!"
       }
+    else
+      render json: {
+        alert: "No user!"
+      }
     end
     #this sends regardless of whether there's an email in database for security reasons
     # render json: {
