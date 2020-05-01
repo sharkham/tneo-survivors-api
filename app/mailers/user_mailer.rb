@@ -11,7 +11,7 @@ class UserMailer < ApplicationMailer
   #   mail to: "to@example.org"
   # end
 
-  default from: "from@example.com"
+  default from: "noveltrackerapp@gmail.com"
 
   def password_reset(user)
     @user = user

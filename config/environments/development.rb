@@ -38,18 +38,20 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_options = {from: GMAIL_ACCOUNT}
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   #specific gmail settings
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
   address:              'smtp.gmail.com',
   port:                 587,
-  domain:               'example.com',
+  domain:               'gmail.com',
   user_name:            GMAIL_ACCOUNT,
   password:             GMAIL_PASSWORD,
   # user_name:            '<username>',
   # password:             '<password>',
   authentication:       'plain',
+  openssl_verify_mode: "none",
   enable_starttls_auto: true  }
 
   # Print deprecation notices to the Rails logger.
