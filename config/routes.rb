@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/api/v1/get_current_user' => "api/v1/sessions#get_current_user"
 
   #password reset routes
-  post 'api/v1/reset_password' => "api/v1/password_resets#create"
+  post 'api/v1/forgot_password' => "api/v1/passwords#forgot"
 
   namespace :api do
     namespace :v1 do
