@@ -1,4 +1,4 @@
-class Api::V1::PasswordResetsController < ApplicationController
+class Api::V1::PasswordsController < ApplicationController
   def create
     user = User.find_by(email: params[:_json])
     # byebug
