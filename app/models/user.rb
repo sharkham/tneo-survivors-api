@@ -15,8 +15,9 @@ class User < ApplicationRecord
     # UserHelpers.generate_base64_token
     self.password_reset_token = generate_base64_token
     #   self.password_reset_token = UserHelpers.generate_base64_token # plain method lives in its own file
-    #   self.password_reset_sent_at = Time.zone.now
-    #   save!
+    self.password_reset_sent_at = Time.zone.now
+    byebug
+    # save!
     # UserMailer.password_reset(self).deliver
   end
 
@@ -24,8 +25,7 @@ class User < ApplicationRecord
 
   #move this into module at some point
   def generate_base64_token
-    test = "test!"
-    byebug
+    test = SecureRandom.urlsafe_base64
   end
 
 end
