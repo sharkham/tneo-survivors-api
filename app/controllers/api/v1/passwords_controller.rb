@@ -1,5 +1,5 @@
 class Api::V1::PasswordsController < ApplicationController
-  def create
+  def forgot
     user = User.find_by(email: params[:_json])
     # byebug
     if user
