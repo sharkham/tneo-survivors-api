@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   #password reset routes
   post 'api/v1/forgot_password' => "api/v1/passwords#forgot"
+  post 'api/v1/reset_password' => "api/v1/passwords#reset"
 
   namespace :api do
     namespace :v1 do
