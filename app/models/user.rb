@@ -21,6 +21,16 @@ class User < ApplicationRecord
     UserMailer.password_reset(self).deliver_now
   end
 
+  def password_token_valid?
+    (self.password_reset_sent_at + 1.hour) > Time.zone.now
+  end
+
+  def reset_password(password)
+    self.password_reset_token = nil
+    self.password = password
+    save!
+  end
+
   private
 
   #move this into module at some point
