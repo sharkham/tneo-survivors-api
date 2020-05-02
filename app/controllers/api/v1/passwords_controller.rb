@@ -18,4 +18,8 @@ class Api::V1::PasswordsController < ApplicationController
     #   alert: "Email sent with password reset instructions."
     # }
   end
+
+  def reset
+    byebug
+  end
 end
