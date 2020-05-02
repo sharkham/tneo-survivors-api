@@ -3,11 +3,11 @@ class Api::V1::PasswordsController < ApplicationController
     user = User.find_by(email: params[:_json])
     # byebug
     if user
-      user.send_password_reset
-      #just for testing
       render json: {
         alert: "User exists!"
       }
+      user.send_password_reset
+      #just for testing
     else
       render json: {
         alert: "No user!"
