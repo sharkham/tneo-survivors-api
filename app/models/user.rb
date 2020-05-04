@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :novels
   has_secure_password
 
-  validates :email, :name, presence: true
+  validates :email, :name, presence: true, if: :email, :name
   # validates :name, presence: true
   # validates :username, uniqueness: { case_sensitive: false }
   validates :email, uniqueness: { case_sensitive: false }
