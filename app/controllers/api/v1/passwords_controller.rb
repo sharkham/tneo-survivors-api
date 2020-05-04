@@ -20,7 +20,18 @@ class Api::V1::PasswordsController < ApplicationController
   end
 
   def reset
-    byebug
+    # byebug
+    user = User.find_by(password_reset_token: params[:token], email: params[:email])
+
+    if user.present? && user.password_token_valid?
+      if user.reset_password(params[:password])
+        render json: { status: 'ok'}, status: 200
+      else
+        render json: { error: user.errors.full_messages }, status: :unprocessable_entity
+      end
+    else
+      render json: {error:  ['Link not valid or expired. Try generating a new link.']}, status: :not_found
+    end
   end
 
   # def reset
@@ -30,7 +41,7 @@ class Api::V1::PasswordsController < ApplicationController
   #     return render json: {error: 'Token not present'}
   #   end
 
-  #   user = User.find_by(reset_password_token: token)
+  #   user = User.find_by(password_reset_token: token)
 
   #   if user.present? && user.password_token_valid?
   #     if user.reset_password!(params[:password])
