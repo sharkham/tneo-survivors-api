@@ -25,7 +25,7 @@ class Api::V1::PasswordsController < ApplicationController
 
     if user.present? && user.password_token_valid?
       if user.reset_password(params[:password])
-        render json: UserSerializer.new(@user).to_serialized_json, status: 200
+        render json: user, status: 200
       else
         render json: { error: user.errors.full_messages }, status: :unprocessable_entity
       end
