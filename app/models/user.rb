@@ -11,6 +11,12 @@ class User < ApplicationRecord
   validates :email, uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 5, wrong_length: "Password must be at least 5 characters." }, if: :password
 
+  before_save :default_values
+
+  def default_values
+    self.admin ||= false # note self.status = 'P' if self.status.nil? might be safer (per @frontendbeauty)
+  end
+
   def send_password_reset
     # UserHelpers.generate_base64_token
     self.password_reset_token = generate_base64_token
