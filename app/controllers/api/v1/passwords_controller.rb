@@ -26,6 +26,7 @@ class Api::V1::PasswordsController < ApplicationController
     if user.present? && user.password_token_valid?
       if user.reset_password(params[:password])
         render json: user, status: 200
+        session[:user_id] = user.id
       else
         render json: { error: user.errors.full_messages }, status: :unprocessable_entity
       end
