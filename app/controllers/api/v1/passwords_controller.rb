@@ -4,13 +4,13 @@ class Api::V1::PasswordsController < ApplicationController
     # byebug
     if user
       render json: {
-        alert: "User exists!"
+        alert: "If this user exists, we have sent you a password reset email."
       }
       user.send_password_reset
       #just for testing
     else
       render json: {
-        alert: "No user!"
+        alert: "If this user exists, we have sent you a password reset email."
       }
     end
     #this sends regardless of whether there's an email in database for security reasons
