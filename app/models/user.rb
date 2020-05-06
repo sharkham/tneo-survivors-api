@@ -18,11 +18,8 @@ class User < ApplicationRecord
   end
 
   def send_password_reset
-    # UserHelpers.generate_base64_token
     self.password_reset_token = generate_base64_token
-    #   self.password_reset_token = UserHelpers.generate_base64_token # plain method lives in its own file
     self.password_reset_sent_at = Time.zone.now
-    # byebug
     save!
     UserMailer.password_reset(self).deliver_now
   end
