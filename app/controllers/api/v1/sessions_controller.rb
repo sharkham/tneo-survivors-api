@@ -13,6 +13,7 @@ class Api::V1::SessionsController < ApplicationController
   end
 
   def get_current_user
+    puts ENV["FRONT_END_URL"]
     if logged_in?
       render json: UserSerializer.new(current_user).to_serialized_json, status: 200
       # render json: current_user

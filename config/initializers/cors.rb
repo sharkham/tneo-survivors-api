@@ -7,7 +7,8 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins ENV['FRONT_END_URL']
+    # origins ENV['FRONT_END_URL']
+    origins 'http://localhost:3001', 'https://novel-tracker-app.netlify.app'
     # origins 'https://novel-tracker-app.netlify.app/'
 
     resource '*',
