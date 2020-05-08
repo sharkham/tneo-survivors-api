@@ -21,6 +21,11 @@ POSTGRES_PASSWORD='your_postgres_password'
 POSTGRES_HOST='localhost'
 POSTGRES_DB='novel_tracker_db'
 POSTGRES_TEST_DB='novel_tracker_test_db'
+POSTGRES_DEVELOPMENT_DB='novel_tracker_development_db'
+GMAIL_ACCOUNT='yournewgmailaccount@gmail.com'
+GMAIL_PASSWORD='yourgmailapppassword'
+FRONT_END_URL='http://localhost:3001'
+RESET_PASSWORD='http://localhost:3001/reset_password'
 ```
 4. Run `bundle install`
 5. Run `rails db:migrate`
